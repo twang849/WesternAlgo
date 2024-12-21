@@ -1,0 +1,28 @@
+```
+import yfinance as yf
+import pandas as pd
+
+# SP500_tickers = pd.read_html("https://en.wikipedia.org/wiki/List_of_S%26P_500_companies")[0]['Symbol'].tolist()
+# SP500_tickers.append("SPY")
+# # print(SP500_tickers)
+# tickers = ' '.join(SP500_tickers)
+#
+# data = yf.download(tickers, start="2023-11-1", end="2024-11-1", actions=False, interval="1mo", group_by='column').round(2)
+# data.to_csv("prices3")
+
+# prices3 = pd.read_csv("prices3")
+# closePrices = prices3.iloc[:14, 505:1009]
+# closePrices = closePrices.apply(pd.to_numeric, errors='coerce')
+# priceChange = closePrices.diff(periods=1, axis=0)
+
+close_prices = pd.read_csv("closePrices")
+stockCovariance = close_prices.cov().round(5)
+stockCovariance.to_csv("stockCovariance")
+close_prices = close_prices.diff()
+variance = close_prices.var().round(5)
+# variance.to_csv("stockVariance")
+```
+
+
+
+
