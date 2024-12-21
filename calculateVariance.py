@@ -19,8 +19,8 @@ closePrices = pd.read_csv("closePrices")
 closePrices.iloc[:, 0] = dateCol
 closePrices.to_csv("closePrices")
 
-Remove 1st and 3rd rows manually from the csv file
-Calculate share price changes and calculate variance and covariances
+# Remove 1st and 3rd rows manually from the csv file
+# Calculate share price changes and calculate variance and covariances
 closePrices = pd.read_csv("closePrices")
 basePrices = closePrices.iloc[0]
 priceChanges = (closePrices.iloc[:, 2:] - basePrices).round(5) # Calculate change in share price from 1st day
